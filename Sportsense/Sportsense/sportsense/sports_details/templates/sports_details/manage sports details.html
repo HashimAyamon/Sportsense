@@ -1,0 +1,40 @@
+{% extends 'temp/main_admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage sports details</title>
+</head>
+<body>
+<center>
+	<table border="1" class="table table-striped">
+		<h1>Manage sports details</h1>
+		<tr style="color: #0b0e1b">
+			<th>Date</th>
+			<th>Time</th>
+			<th>Sports item</th>
+			<th>Team name</th>
+			<th>Score</th>
+			<th>Status</th>
+{#			<th>Link</th>#}
+{#            <th>Status</th>#}
+		</tr>
+        {% for i in z %}
+		<tr style="color: #0b0e1b">
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+			<td>{{ i.sports_item }}</td>
+			<td>{{ i.team_name }}</td>
+			<td>{{ i.score }}</td>
+			<td>{{ i.status }}</td>
+{#			<td>{{ i.link }}</td>#}
+{#            <td>{{ i.statuss }}</td>#}
+			<td><a href="/sports_details/ updet/{{ i.sports_id }}" class="btn btn-primary">Update</a></td>
+			<td><a href="/sports_details/ deldet/{{ i.sports_id }}" class="btn btn-primary">Delete</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

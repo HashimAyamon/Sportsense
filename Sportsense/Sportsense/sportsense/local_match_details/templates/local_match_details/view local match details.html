@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view local match details</title>
+</head>
+<body>
+<center>
+	<table border="1">
+		<h1>View local match details</h1>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Sports item</th>
+			<th>Team name</th>
+			<th>Score</th>
+			<th>Status</th>
+		</tr>
+        {% for i in y %}
+		<tr>
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+			<td>{{ i.sports_item }}</td>
+			<td>{{ i.team_name }}</td>
+			<td>{{ i.score }}</td>
+			<td>{{ i.status }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends 'temp/main_manager.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>post facilities</title>
+</head>
+<body>
+	<center>
+		<h1>Post facilities</h1>
+		<form method="post">
+             {% csrf_token %}
+			<table>
+				<tr>
+					<td></td>
+					<td><input type="text" name="dt" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="SEAT"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="text" name="prk" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="PARKING"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="SUBMIT" required="" style="height: 40px;width: 280px;border-radius: 15px" class="btn btn-outline-dark"></td>
+				</tr>
+			</table>
+			
+		</form>
+
+            {% if x %}
+                <script>
+                alert('Successfully added')
+                </script>
+            {% endif %}
+
+	</center>
+
+</body>
+</html>
+{% endblock %}

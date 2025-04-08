@@ -1,0 +1,83 @@
+{% extends 'temp/main_manager.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>post local match details</title>
+</head>
+<body>
+	<center>
+		<h1>Post local match details</h1>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+{#				<tr>#}
+{#					<td>Date</td>#}
+{#					<td><input type="date" name="dt"></td>#}
+{#				</tr>#}
+{#				<tr>#}
+{#					<td>Time</td>#}
+{#					<td><input type="time" name="tm"></td>#}
+{#				</tr>#}
+				<tr>
+					<td></td>
+					<td><select name="spitem" required="" class="form-control" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black">
+                        <option value="Football">Football</option>
+                        <option value="Cricket">Cricket</option>
+                        <option value="Basketball">Basketball</option>
+                        <option value="Badminton">Badminton</option>
+                        <option value="Hockey">Hockey</option>
+                        <option value="Vollyball">Vollyball</option>
+                        <option value="Tennis">Tennis</option>
+                        <option value="Baseball">Baseball</option>
+                        <option value="Readby">Readby</option>
+                        <option value="American Football">American Football</option>
+                        <option value="F1">F1</option>
+                        <option value="Mixed martial arts">Mixed martial arts</option>
+                    </select></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="text" name="tmnm" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="TEAM NAME (Team1 VS Team2)"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="text" name="scr" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="SCORE (Score1 : Score2)"></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td><input type="text" name="loc" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="LOCATION"></td>
+				</tr>
+                <tr>
+					<td></td>
+                    <td><textarea name="sts"  style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="STATUS (Optional)"></textarea></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td><select name="parking" required="" class="form-control" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black">
+                        <option value="Parking Available">Parking Available</option>
+                        <option value="Parking Not Available">Parking Not Available</option>
+                    </select></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td><input type="text" name="seatno" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="SEAT NUMBER"></td>
+				</tr>
+
+				<tr>
+					<td></td>
+					<td><input type="submit" value="SUBMIT" required="" style="height: 40px;width: 280px;border-radius: 15px" class="btn btn-outline-dark"></td>
+				</tr>
+			</table>
+			
+		</form>
+        {% if x %}
+                <script>
+                alert('Successfully added')
+                </script>
+            {% endif %}
+	</center>
+
+</body>
+</html>
+{% endblock %}

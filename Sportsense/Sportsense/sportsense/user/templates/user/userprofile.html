@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Userprofile</title>
+</head>
+<body>
+	<center>
+		<h1>User profile</h1>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+				<tr>
+					<td>Username</td>
+					<td><input type="text" name="unm" required=""></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="Password" name="psw" required=""></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" name="eml" required=""></td>
+				</tr>
+				<tr>
+					<td>Phone</td>
+					<td><input type="text" name="phn" required="" pattern="[0-9]{10}"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="SUBMIT" ></td>
+				</tr>
+			</table>
+			
+		</form>
+	</center>
+</body>
+</html>

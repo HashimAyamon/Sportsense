@@ -1,0 +1,76 @@
+{% extends 'temp/main_home.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+	<center>
+		<h1>Register</h1>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+                <tr>
+					<td></td>
+					<td><input type="email" name="eml" id="em" onclick="checkuser()" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="EMAIL"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="text" name="unm" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="USERNAME"></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td><input type="text" name="phn" required pattern="[0-9]{10}" minlength="10" maxlength="10" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="PHONE"></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td><input type="text" name="adr" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="ADDRESS"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="Password" name="psw" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="PASSWORD"></td>
+				</tr>
+
+
+
+				<tr>
+					<td></td>
+					<td><input type="submit" value="SUBMIT" required="" style="height: 40px;width: 280px;border-radius: 15px" class="btn btn-outline-dark"></td>
+				</tr>
+			</table>
+			
+		</form>
+
+        {% if x %}
+                <script>
+                alert('Successfully registered')
+                </script>
+            {% endif %}
+
+        <script>
+        function checkuser(rc) {
+            var uname = document.getElementById("em").value;
+            $.ajax({
+                url:'/login/check/',
+                data:{
+                    'un':uname,
+                },
+                dataType:'json',
+                success:function (data) {
+                    if(data.msg=='exist')
+                    {
+                        alert('Username Already Exist')
+                        document.getElementById("em").value="";
+                        document.getElementById("em").focus();
+                    }
+                }
+            })
+
+        }
+</script>
+
+	</center>
+</body>
+</html>
+{% endblock %}

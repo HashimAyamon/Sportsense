@@ -1,0 +1,30 @@
+{% extends 'temp/main_manager.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage facilities</title>
+</head>
+<body>
+<center>
+	<table border="1" class="table table-striped">
+		<h1>Manage facilities</h1>
+		<tr style="color: #0b0e1b">
+			<th>Seat</th>
+			<th>Parking</th>
+            <th>Status</th>
+		</tr>
+        {% for i in x %}
+		<tr style="color: #0b0e1b">
+			<td>{{ i.seat }}</td>
+			<td>{{ i.parking }}</td>
+            <td>{{ i.status }}</td>
+			<td><a href="/facilities/ up_fac/{{ i.facilities_id }}" class="btn btn-primary">Update</a></td>
+			<td><a href="/facilities/ dl_fac/{{ i.facilities_id }}" class="btn btn-primary">Delete</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

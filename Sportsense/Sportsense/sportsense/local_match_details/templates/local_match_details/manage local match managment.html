@@ -1,0 +1,44 @@
+{% extends 'temp/main_manager.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage local match details</title>
+</head>
+<body>
+<center>
+	<table border="1" class="table table-striped">
+		<h1>Manage local match details</h1>
+		<tr style="color: #0b0e1b">
+			<th>Date</th>
+			<th>Time</th>
+			<th>Sports item</th>
+			<th>Team name</th>
+			<th>Score</th>
+            <th>Location</th>
+            <th>Parking</th>
+            <th>Seat Number</th>
+			<th>Status</th>
+{#            <th>Statuss</th>#}
+		</tr>
+        {% for i in y %}
+		<tr style="color: #0b0e1b">
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+			<td>{{ i.sports_item }}</td>
+			<td>{{ i.team_name }}</td>
+			<td>{{ i.score }}</td>
+            <td>{{ i.location }}</td>
+            <td>{{ i.parking }}</td>
+            <td>{{ i.seat_no }}</td>
+			<td>{{ i.status }}</td>
+{#            <td>{{ i.statuss }}</td>#}
+			<td><a href="/local_match_details/ update/{{ i.match_id }}" class="btn btn-primary">Update</a></td>
+			<td><a href="/local_match_details/ delete/{{ i.match_id }}" class="btn btn-primary">Delete</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view facilities</title>
+</head>
+<body>
+<center>
+	<table border="1">
+		<h1>View facilities</h1>
+
+		<tr>
+			<th>Seat</th>
+			<th>Parking</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td>{{ i.seat }}</td>
+			<td>{{ i.parking }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>

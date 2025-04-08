@@ -1,0 +1,34 @@
+{% extends 'temp/main_admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage sports news</title>
+</head>
+<body>
+<center>
+	<table border="1" class="table table-striped">
+		<h1>Manage sports news</h1>
+		<tr style="color: #0b0e1b">
+			<th>Date</th>
+			<th>Time</th>
+			<th>Heading</th>
+			<th>Content</th>
+{#            <th>Status</th>#}
+		</tr>
+        {% for i in v %}
+		<tr style="color: #0b0e1b">
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+			<td>{{ i.heading }}</td>
+			<td>{{ i.content }}</td>
+{#            <td>{{ i.status }}</td>#}
+			<td><a href="/sports_news/ update_news/{{ i.news_id }}" class="btn btn-primary">Update</a></td>
+			<td><a href="/sports_news/ delete_news/{{ i.news_id }}" class="btn btn-primary">Delete</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

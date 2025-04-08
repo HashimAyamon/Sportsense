@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view sports news</title>
+</head>
+<body>
+<center>
+	<table border="1">
+		<h1>View sports news</h1>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Heading</th>
+			<th>Content</th>
+		</tr>
+        {% for i in w %}
+		<tr>
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+			<td>{{ i.heading }}</td>
+			<td>{{ i.content }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>

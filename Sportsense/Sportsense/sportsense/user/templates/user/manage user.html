@@ -1,0 +1,34 @@
+{% extends 'temp/main_admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manage user</title>
+</head>
+<body>
+<center>
+	<table border="1" class="table table-striped">
+		<h1>Manage user</h1>
+		<tr style="color: #0b0e1b">
+			<th>User name</th>
+			<th>Password</th>
+			<th>Email</th>
+			<th>Phone</th>
+            <th>Status</th>
+		</tr>
+        {% for i in x %}
+		<tr style="color: #0b0e1b">
+			<td>{{ i.username }}</td>
+			<td>{{ i.password }}</td>
+			<td>{{ i.email }}</td>
+			<td>{{ i.phone }}</td>
+            <td>{{ i.status }}</td>
+			<td><a href="/user/apprv/{{ i.user_id }}" class="btn btn-primary">Approve</a></td>
+			<td><a href="/user/ reject/{{ i.user_id }}" class="btn btn-primary">Reject</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>notification news</title>
+</head>
+<body>
+<center>
+	<table border="1">
+		<h1>Notification news</h1>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Heading</th>
+		</tr>
+        {% for i in v %}
+		<tr>
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+			<td>{{ i.heading }}</td>
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>

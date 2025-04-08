@@ -1,0 +1,46 @@
+{% extends 'temp/main_admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>post sports news</title>
+</head>
+<body>
+	<center>
+		<h1>Post sports news</h1>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+				<tr>
+					<td></td>
+					<td><input type="text" id="inputField" oninput="capitalizeText(this)" name="hdg" required="" style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="HEADING"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><textarea name="ctnt" required=""style="height: 50px;width: 280px;border-radius: 7px;font-family: sans-serif;color: black" placeholder="CONTENT"></textarea></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="SUBMIT" required="" style="height: 40px;width: 280px;border-radius: 15px" class="btn btn-outline-dark"></td>
+				</tr>
+			</table>
+
+            <script>
+                function capitalizeText(input) {
+                    input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+                }
+            </script>
+
+			
+		</form>
+        {% if x %}
+                <script>
+                alert('Successfully added')
+                </script>
+        {% endif %}
+
+	</center>
+
+</body>
+</html>
+{% endblock %}

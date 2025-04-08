@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view sports details</title>
+</head>
+<body>
+<center>
+	<table border="1">
+		<h1>View sports details</h1>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Sports item</th>
+			<th>Team name</th>
+			<th>Score</th>
+			<th>Status</th>
+{#			<th>Link</th>#}
+		</tr>
+        {% for i in z %}
+		<tr>
+			<td>{{ i.date }}</td>
+			<td>{{ i.time }}</td>
+			<td>{{ i.sports_item }}</td>
+			<td>{{ i.team_name }}</td>
+			<td>{{ i.score }}</td>
+			<td>{{ i.status }}</td>
+{#			<td>{{ i.link }}</td>#}
+		</tr>
+        {% endfor %}
+	</table>
+</center>
+</body>
+</html>
