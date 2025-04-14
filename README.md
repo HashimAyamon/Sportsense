@@ -1,4 +1,4 @@
-Sportsense - Local Sports Event Platform
+*Sportsense* - Local Sports Event Platform
 
 🚀 Enhancing Local Sports Visibility & Engagement
 
